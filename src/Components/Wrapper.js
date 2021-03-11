@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   makeStyles,
@@ -7,10 +7,10 @@ import {
   Typography,
   Button,
 } from "@material-ui/core";
-
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import MUIDrawer from "./MUIDrawer";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     position: "absolute",
     top: 0,
@@ -24,19 +24,30 @@ const useStyles = makeStyles({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-});
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: "auto",
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+  },
+}));
 
 function Wrapper() {
+  const [openDrawer, toggleDrawer] = useState(true);
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
       <header className={classes.header}>
-        <AppBar>
+        <AppBar position="fixed" className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <Typography variant="h6" className={classes.title}>
               bwell
             </Typography>
-            <Button color="inherit">Notifications</Button>
+            <Button color="inherit">{`View your notifications & to-dos`}</Button>
             <IconButton
               edge="start"
               className={classes.profileIcon}
@@ -48,6 +59,12 @@ function Wrapper() {
           </Toolbar>
         </AppBar>
       </header>
+      <MUIDrawer
+        anchor={"left"}
+        open={openDrawer}
+        onClose={() => toggleDrawer(false)}
+        colorTransparent
+      ></MUIDrawer>
     </div>
   );
 }
