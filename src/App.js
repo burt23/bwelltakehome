@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 import Wrapper from "./Components/Wrapper";
+import FHIRExercise from "./containers/FHIRExercise";
 
 const url = "http://hapi.fhir.org/baseR4/Patient?_format=json";
 
@@ -23,7 +24,11 @@ function App() {
     getData();
   }, []);
 
-  return <Wrapper />;
+  return (
+    <Wrapper>
+      <FHIRExercise />
+    </Wrapper>
+  );
 }
 
 export default App;

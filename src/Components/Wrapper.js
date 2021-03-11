@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     display: "grid",
+    gridTemplateAreas: `"header header""drawer content"`,
+    gridTemplateColumns: `241px 100%`,
+    gridTemplateRows: `64px 100%`,
+    flexDirection: "column",
     width: "100vw",
     height: "100vh",
   },
@@ -33,9 +37,19 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
   },
+  content: {
+    gridArea: "content",
+  },
+  header: {
+    flex: "0 1 auto",
+    gridArea: "header",
+  },
+  drawer: {
+    gridArea: "drawer",
+  },
 }));
 
-function Wrapper() {
+function Wrapper({ children }) {
   const [openDrawer, toggleDrawer] = useState(true);
   const classes = useStyles();
 
@@ -59,12 +73,15 @@ function Wrapper() {
           </Toolbar>
         </AppBar>
       </header>
-      <MUIDrawer
-        anchor={"left"}
-        open={openDrawer}
-        onClose={() => toggleDrawer(false)}
-        colorTransparent
-      ></MUIDrawer>
+      <div className={classes.drawer}>
+        <MUIDrawer
+          anchor={"left"}
+          open={openDrawer}
+          onClose={() => toggleDrawer(false)}
+          colorTransparent
+        />
+      </div>
+      <div className={classes.content}>{children}</div>
     </div>
   );
 }
