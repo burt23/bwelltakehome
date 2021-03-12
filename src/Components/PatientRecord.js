@@ -1,22 +1,12 @@
-import { Typography, makeStyles, TableRow, TableCell } from "@material-ui/core";
+import { TableRow, TableCell } from "@material-ui/core";
 
-const useStyles = makeStyles({
-  root: {
-    display: "flex",
-    flexDirection: "row",
-    border: "10px solid cyan",
-  },
-});
 const PatientRecord = ({ record }) => {
   const {
-    resource: { name = [], birthdate = "test", gender = "bar" },
-    carbs = "yo",
-    protein = "fuel",
+    resource: { name = [], birthdate = "dob", gender = "gender" },
   } = record;
-  const { family, given } = name[0] || {};
-  const builtName = `${family}${given}`;
-  console.log({ record });
-  const classes = useStyles();
+  const { family = "", given = "" } = name[0] || {};
+  const builtName = `${given} ${family}`;
+
   return (
     <TableRow key={name}>
       <TableCell component="th" scope="row">
@@ -24,8 +14,9 @@ const PatientRecord = ({ record }) => {
       </TableCell>
       <TableCell align="right">{gender}</TableCell>
       <TableCell align="right">{birthdate}</TableCell>
-      <TableCell align="right">{carbs}</TableCell>
-      <TableCell align="right">{protein}</TableCell>
+      <TableCell align="right">
+        <a href="#"> Show More </a>
+      </TableCell>
     </TableRow>
   );
 };
