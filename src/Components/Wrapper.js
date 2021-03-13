@@ -36,9 +36,11 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
+    background: "#2E3586",
   },
   content: {
     gridArea: "content",
+    background: "#E5E5E5",
   },
   header: {
     flex: "0 1 auto",
