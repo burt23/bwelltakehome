@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  iconWrapper: {
+    color: "#fff",
+  },
 }));
 
 const MUIDrawer = () => {
@@ -52,7 +55,7 @@ const MUIDrawer = () => {
             "Settings",
           ].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>
+              <ListItemIcon className={classes.iconWrapper}>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
