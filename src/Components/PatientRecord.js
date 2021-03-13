@@ -15,7 +15,10 @@ const PatientRecord = ({ record }) => {
       <TableCell align="right">{gender}</TableCell>
       <TableCell align="right">{birthdate}</TableCell>
       <TableCell align="right">
-        <a href="#"> Show More </a>
+        <a alt="showMoreLink" href="/#">
+          {" "}
+          Show More{" "}
+        </a>
       </TableCell>
     </TableRow>
   );
