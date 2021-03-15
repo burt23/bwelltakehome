@@ -9,6 +9,7 @@ import {
   Button,
 } from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import MUIDrawer from "./MUIDrawer";
 
 const useStyles = makeStyles((theme) => ({
@@ -50,6 +51,14 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     gridArea: "drawer",
   },
+  flexRow: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  flexColumn: {
+    display: "flex",
+    flexDirection: "column",
+  },
 }));
 
 function Wrapper({ children }) {
@@ -65,14 +74,28 @@ function Wrapper({ children }) {
               <img src={logo} alt="bwellLogo" />
             </Typography>
             <Button color="inherit">{`View your notifications & to-dos`}</Button>
-            <IconButton
-              edge="start"
-              className={classes.profileIcon}
-              color="inherit"
-              aria-label="profileIcon"
-            >
-              <AccountCircleIcon />
-            </IconButton>
+            <div className={classes.flexRow}>
+              <IconButton
+                edge="start"
+                className={classes.profileIcon}
+                color="inherit"
+                aria-label="profileIcon"
+              >
+                <AccountCircleIcon />
+              </IconButton>
+              <div className={classes.flexColumn}>
+                <Typography variant="body2">Resu Eman</Typography>
+                <Typography variant="body2">Your Account</Typography>
+              </div>
+              <IconButton
+                edge="start"
+                className={classes.profileIcon}
+                color="inherit"
+                aria-label="openProfilePopperArrow"
+              >
+                <KeyboardArrowDownIcon />
+              </IconButton>
+            </div>
           </Toolbar>
         </AppBar>
       </header>
