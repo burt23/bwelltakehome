@@ -6,8 +6,8 @@ import {
 } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import fetchData from "../fetchData";
-// import PatientRecord from "../Components/PatientRecord";
 import MUITable from "../Components/MUITable";
+
 const useStyles = makeStyles({
   root: {
     display: "flex",
@@ -30,7 +30,6 @@ function FHIRExercise() {
   useEffect(() => {
     async function initialize() {
       const d = await fetchData(url);
-      console.log("setting data fetch", d);
       setData(d);
     }
     initialize();
