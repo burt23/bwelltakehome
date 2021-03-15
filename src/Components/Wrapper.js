@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import logo from "../logo.png";
-import Vector from "../Vector.png";
+import logo from "../assets/logo.png";
+import Vector from "../assets/Vector.png";
 import {
   AppBar,
   makeStyles,
