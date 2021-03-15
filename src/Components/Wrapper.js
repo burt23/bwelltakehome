@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../logo.png";
+import Vector from "../Vector.png";
 import {
   AppBar,
   makeStyles,
@@ -9,7 +10,6 @@ import {
   Button,
 } from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import MUIDrawer from "./MUIDrawer";
 
 const useStyles = makeStyles((theme) => ({
@@ -93,7 +93,8 @@ function Wrapper({ children }) {
                 color="inherit"
                 aria-label="openProfilePopperArrow"
               >
-                <KeyboardArrowDownIcon />
+                {/* <DownArrow /> */}
+                <img src={Vector} alt="downArrow" />
               </IconButton>
             </div>
           </Toolbar>
