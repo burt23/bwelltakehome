@@ -6,7 +6,8 @@ import {
 } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import fetchData from "../fetchData";
-import PatientRecord from "../Components/PatientRecord";
+// import PatientRecord from "../Components/PatientRecord";
+import MUITable from "../Components/MUITable";
 const useStyles = makeStyles({
   root: {
     display: "flex",
@@ -44,13 +45,7 @@ function FHIRExercise() {
         <Typography variant="h6" gutterBottom>
           Patient Data
         </Typography>
-        {hasEntries ? (
-          entry.map((record) => (
-            <PatientRecord record={record} key={record.resource.id} />
-          ))
-        ) : (
-          <CircularProgress />
-        )}
+        {hasEntries ? <MUITable records={entry} /> : <CircularProgress />}
       </Paper>
     </div>
   );
