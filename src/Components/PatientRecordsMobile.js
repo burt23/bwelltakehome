@@ -12,10 +12,16 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row",
     alignItems: "flex-end",
   },
+  title: {
+    fontSize: "1.25rem",
+    color: "#2E3586",
+  },
   bottomRow: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    color: "#4F4F4F",
+    paddingBottom: "0.75rem",
   },
 }));
 
@@ -39,7 +45,7 @@ const PatientRecordMobile = ({ record }) => {
   return (
     <div className={classes.root}>
       <div className={classes.titleHeader}>
-        <Typography variant="h5">
+        <Typography variant="h5" className={classes.title}>
           {`${builtName} - ${normalizedGender}`}
         </Typography>
         {/* <Typography variant="subtitle2">{gender}</Typography> */}
