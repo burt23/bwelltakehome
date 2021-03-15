@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Wrapper from "./Components/Wrapper";
 import FHIRExercise from "./containers/FHIRExercise";

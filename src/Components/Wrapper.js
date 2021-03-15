@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../logo.png";
 import {
   AppBar,
   makeStyles,
@@ -61,7 +62,7 @@ function Wrapper({ children }) {
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <Typography variant="h6" className={classes.title}>
-              bwell
+              <img src={logo} alt="bwellLogo" />
             </Typography>
             <Button color="inherit">{`View your notifications & to-dos`}</Button>
             <IconButton
