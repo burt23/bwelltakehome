@@ -13,6 +13,9 @@ const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
+  header: {
+    background: "#e0e0e0",
+  },
 });
 
 export default function MUITable({ records }) {
@@ -21,7 +24,7 @@ export default function MUITable({ records }) {
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
-        <TableHead>
+        <TableHead className={classes.header}>
           <TableRow>
             <TableCell>Patient Name</TableCell>
             <TableCell align="right">Sex at Birth</TableCell>
