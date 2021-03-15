@@ -28,6 +28,8 @@ const useStyles = makeStyles({
   },
   patientData: {
     fontFamily: `'Lato', sans-serif !important`,
+    color: "#2E3586",
+    textAlign: "center",
   },
 });
 
