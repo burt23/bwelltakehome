@@ -16,6 +16,9 @@ const useStyles = makeStyles({
   header: {
     background: "#e0e0e0",
   },
+  typography: {
+    fontFamily: `Lato, sans-serif !important`,
+  },
 });
 
 export default function MUITable({ records }) {
@@ -26,10 +29,14 @@ export default function MUITable({ records }) {
       <Table className={classes.table} aria-label="simple table">
         <TableHead className={classes.header}>
           <TableRow>
-            <TableCell>Patient Name</TableCell>
-            <TableCell align="right">Sex at Birth</TableCell>
-            <TableCell align="right">Date of Birth</TableCell>
-            <TableCell align="right"></TableCell>
+            <TableCell className={classes.typography}>Patient Name</TableCell>
+            <TableCell className={classes.typography} align="right">
+              Sex at Birth
+            </TableCell>
+            <TableCell className={classes.typography} align="right">
+              Date of Birth
+            </TableCell>
+            <TableCell className={classes.typography} align="right"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

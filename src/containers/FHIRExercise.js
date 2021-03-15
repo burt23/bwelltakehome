@@ -15,11 +15,19 @@ const useStyles = makeStyles({
   root: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    padding: "3rem",
   },
   paper: {
     padding: "3rem",
     minWidth: "400px",
+  },
+  title: {
+    fontSize: "1.75rem",
+    color: "#2E3586",
+    fontFamily: `'Lato', sans-serif !important`,
+  },
+  patientData: {
+    fontFamily: `'Lato', sans-serif !important`,
   },
 });
 
@@ -32,7 +40,6 @@ function FHIRExercise() {
   const classes = useStyles();
   const theme = useTheme();
   const desktopView = useMediaQuery(theme.breakpoints.up("md"));
-  console.log("is this the desktop view???", desktopView);
   const renderEntries = desktopView ? (
     <MUITable records={entry} />
   ) : (
@@ -49,11 +56,11 @@ function FHIRExercise() {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h2" gutterBottom>
+      <Typography variant="h2" gutterBottom className={classes.title}>
         FHIRExercise
       </Typography>
       <Paper className={classes.paper} elevation={3} square>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" gutterBottom className={classes.patientData}>
           Patient Data
         </Typography>
         {hasEntries ? renderEntries : <CircularProgress />}

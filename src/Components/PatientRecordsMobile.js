@@ -4,7 +4,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    // border: "2px solid gold",
     padding: "1rem",
   },
   titleHeader: {
@@ -15,12 +14,14 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: "1.25rem",
     color: "#2E3586",
+    fontFamily: `'Lato', sans-serif !important`,
   },
   bottomRow: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     color: "#4F4F4F",
+    fontFamily: `'Lato', sans-serif !important`,
     paddingBottom: "0.75rem",
   },
 }));
@@ -34,8 +35,6 @@ const PatientRecordMobile = ({ record }) => {
   const builtName = `${given} ${family}`;
   const classes = useStyles();
   const foundGenderString = gender === "n/a" ? false : true;
-  console.log("found gender string", foundGenderString);
-  console.log("gender", gender);
   const isFemale =
     foundGenderString && gender.toLowerCase() === "female" ? "F" : "n/a";
   const isMale =
