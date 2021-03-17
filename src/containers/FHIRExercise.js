@@ -45,7 +45,9 @@ function FHIRExercise() {
   const renderEntries = desktopView ? (
     <MUITable records={entry} />
   ) : (
-    entry.map((record) => <PatientRecordsMobile record={record} />)
+    entry.map((record) => (
+      <PatientRecordsMobile key={record.fullUrl} record={record} />
+    ))
   );
 
   useEffect(() => {

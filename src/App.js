@@ -1,6 +1,6 @@
 import "./App.css";
 import Wrapper from "./Components/Wrapper";
-import FHIRExercise from "./containers/FHIRExercise";
+import FHIRExercise from "./Containers/FHIRExercise";
 
 function App() {
   return (
